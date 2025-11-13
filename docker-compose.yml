@@ -77,7 +77,7 @@ services:
       postgres:
         condition: service_healthy
       minio:
-        condition: service_started
+        condition: service_healthy
       docreader:
         condition: service_healthy
       neo4j:
@@ -105,8 +105,10 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+      start_period: 40s  # 增加启动时间
     networks:
       - WeKnora-network
+    restart: unless-stopped  # 添加此行
 
   frontend:
     image: wechatopenai/weknora-ui:latest
