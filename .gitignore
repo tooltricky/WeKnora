@@ -24,9 +24,12 @@ node_modules/
 tmp/
 temp/
 
+# Docker compose файл (локальные настройки)
+# docker-compose.yml
+
 WeKnora
 /models/
-services/docreader/src/proto/__pycache__
+**/__pycache__
 test/data/mswag.txt
 data/files/
 
@@ -36,3 +39,4 @@ data/files/
 ### macOS
 # General
 .DS_Store
+PROGRESS_RU.md
